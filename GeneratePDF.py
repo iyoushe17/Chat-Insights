@@ -26,7 +26,7 @@ class WhatsAppReport():
 
     def __init__(self, data):
         self.fileName = f'WhatsApp-Chat-Report.pdf'
-        self.documentTitle = 'WhatsAppChatReport'
+        self.documentTitle = 'WhatsApp Chat Report'
         self.title = 'Chat-Insights'
         self.subTitle = f'Your WhatsApp Chat Report'
         self.image = 'message-graph.png'
@@ -42,6 +42,11 @@ class WhatsAppReport():
         self.pdf.setTitle(self.documentTitle)
 
     def generate(self):
+        '''Draw some lines'''
+        self.pdf.line(30, 750, 550, 750)
+        self.pdf.line(130, 690, 450, 690)
+        self.pdf.line(130, 540, 450, 540)
+
         '''The Title'''
         self.pdf.setFont("Helvetica", 36)
         self.pdf.drawCentredString(300, 770, self.title)
@@ -49,28 +54,28 @@ class WhatsAppReport():
         '''The Subtitle'''
         self.pdf.setFillColorRGB(0, 0, 255)
         self.pdf.setFont("Courier-Bold", 24)
-        self.pdf.drawCentredString(290,720, self.subTitle)
+        self.pdf.drawCentredString(290,710, self.subTitle)
         
         textLines = [
-        f'You and your friend exchanged a total of {self.totalMessages} text messages.',
-        f'Over a span of {self.totalDays} days.',
-        f'On an average, you guys exchanged {self.averageTextPerDay} texts per day.',
-        'Your shared record for most number of texts sent in one days lies,',
-        f'at {self.maxTextOneDay}.',
+        f'You and your friend have been talking on WhatsApp for {self.totalDays} days.',
+        f'You guys have exchanged a total of {self.totalMessages} text messages till date!',
+        f'On an average, {self.averageTextPerDay} text messages have been exchanged per day.',
         f'{self.maxTextDate} was the day you achieved a record high of text messages',
-        f'exchanged per day.'
-        ]
+        f'exchanged in one single day.',
+        f'Your shared record for most number of text messages sent in one day ',
+        f'lies at {self.maxTextOneDay}. Keep up the good work!',
+]
 
         '''The numbers'''
-        text = self.pdf.beginText(40, 680)
+        text = self.pdf.beginText(40, 660)
         text.setFont("Courier", 13)
-        text.setFillColor(colors.red)
+        text.setFillColor(colors.black)
 
         for line in textLines:
             text.textLine(line)
         self.pdf.drawText(text)
 
-        '''The Line Graph'''
+        '''The Graph'''
         self.pdf.drawInlineImage(self.image, -1, 50)
         self.pdf.save()
 

@@ -1,7 +1,10 @@
+from GeneratePDF import WhatsAppReport
+
 file_name = '''chat.txt'''
 chat = open(file_name,'r',encoding="utf-8")
 chats = chat.readlines()
 user1 = {}
+
 import matplotlib.pyplot as plt 
 for session in chats:
 	try:
@@ -16,31 +19,43 @@ for session in chats:
 x = []
 y = []
 j = 0
-n = 0
+totalMessages = 0
 
 for i in user1:
 	y.append(j)
 	x.append(user1[i])
-	n = n+user1[i] 
+	totalMessages = totalMessages + user1[i] 
 	j+=1
+
 Keymax = max(user1, key=user1.get) 
 fig = plt.figure()
-fig.suptitle(file_name, fontsize=14, fontweight='bold')
+# fig.suptitle(file_name, fontsize=14, fontweight='bold')
 ax = fig.add_subplot(111)
 fig.subplots_adjust(top=0.85)
-ax.set_title('total number of messages are {} in {} days. Average {} text/day. On {} max number of text were sent:{}'.format(n,len(user1),n//len(user1),Keymax,user1[Keymax]))
+
+
+#ax.set_title('total number of messages are {.} in {.} days. Average {.} text/day. On {} max number of text were sent:{}'.format(totalMessages,totalDays,totalMessages//len(user1),Keymax,user1[Keymax]))
 
 ax.plot(y,x)
 ax.set_xlabel('days') 
 ax.set_ylabel('number of messages') 
 
-
+data = {"totalMessages" : totalMessages,
+		"totalDays" : len(user1),
+		"averageTextPerDay" : totalMessages//len(user1),
+		"maxTextDate" : Keymax,
+		"maxTextOneDay" : user1[Keymax]
+}
 
 # plt.show()
 # D = user1
 # plt.bar(range(len(D)), list(D.values()), align='center')
 # plt.xticks(range(len(D)), list(D.keys()))
-plt.get_current_fig_manager().full_screen_toggle() # toggle fullscreen mode
-plt.show()
+#plt.get_current_fig_manager().full_screen_toggle() # toggle fullscreen mode
+#plt.show()
 
-plt.close()
+plt.savefig('message-graph.png')
+#plt.close()
+
+report = WhatsAppReport(data)
+report.generate()
