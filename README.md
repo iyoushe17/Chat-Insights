@@ -17,15 +17,15 @@
 ![step 1](images/1s.jpg)  
   
 ## Step 2  
-![step 2](images/2.jpeg)  
+![step 2](images/2.jpg)  
   
 ## Step 3  
   
-![step 3](images/3.jpeg)  
+![step 3](images/3.jpg)  
   
 # Step 4  
    
-![step 4](images/4.jpeg)  
+![step 4](images/4.jpg)  
 
 After exporting the chat, make sure that you have the WhatsApp chat file in the same directory. 
 
