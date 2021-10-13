@@ -23,11 +23,11 @@
   
 ![step 3](images/3.jpg)  
   
-# Step 4  
+## Step 4  
    
 ![step 4](images/4.jpg)  
 
-After exporting the chat, make sure that you have the WhatsApp chat file in the same directory. 
+After exporting the chat, make sure that you have the WhatsApp chat file in the same directory as ```main.py```. 
 
 
 
