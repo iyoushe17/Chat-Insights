@@ -2,7 +2,7 @@
 ## Generate a PDF report 📝and gain interesting insights 🧐 about your WhatsApp chat with your best buddy!  
   
 
-![ss](images\report-screenshot.jpeg)
+![ss](images/report-screenshot.jpeg)
   
 
 # Installation
@@ -14,18 +14,18 @@
   
 ## Step 1  
 
-![step 1](images\1.jpeg)  
+![step 1](images/1.jpeg)  
   
 ## Step 2  
-![step 2](images\2.jpeg)  
+![step 2](images/2.jpeg)  
   
 ## Step 3  
   
-![step 3](images\3.jpeg)  
+![step 3](images/3.jpeg)  
   
 # Step 4  
    
-![step 4](images\4.jpeg)  
+![step 4](images/4.jpeg)  
 
 After exporting the chat, make sure that you have the WhatsApp chat file in the same directory. 
 
