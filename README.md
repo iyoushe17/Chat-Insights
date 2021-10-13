@@ -14,7 +14,7 @@
   
 ## Step 1  
 
-![step 1](images/1.jpeg)  
+![step 1](images/1.jpg)  
   
 ## Step 2  
 ![step 2](images/2.jpeg)  
